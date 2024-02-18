@@ -8,7 +8,7 @@ public class CalcInterface
         System.out.println("               ==> Command Interface Calculator <==");
         System.out.println("      _________________________-----___________________________");
         System.out.println("");
-        System.out.println("Choose from Addition, Subtraction, Multiplication, Division, Power(^), Factorial(!) or Comparison(<,>)");
+        System.out.println("Choose from Addition, Subtraction, Multiplication, Division, Power(^), Factorial(!) or Comparision(<,>)");
         System.out.println("");
         System.out.println("Enter your expression in this format: for example, '2+3', or type 'exit' to quit.");
         while (true) 
