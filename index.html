@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>    
+  <style>
+  @import url('https://fonts.googleapis.com/css2?family=Gajraj+One&family=Lunasima:wght@400;700&family=Monofett&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Bruno+Ace&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap');
+   @import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
+   
+   header {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    border-bottom: 4px solid #333;
+    background-color: #f8f9fa; 
+    background-image: url("https://i.ibb.co/Kh0KY5X/image1-0.jpg");
+    backdrop-filter: blur(20px);
+     
+}
+   
+   body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+       
+       overflow:hidden;
+    }
+@keyframes spring {
+    0% { transform: scale(0.9); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+.container {
+    width: 400px; 
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    outline: 3px double purple;
+    animation: spring 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+
+    h1 {
+    padding-top: 0;
+    margin-top: 0; 
+    font-size: 35px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+    text-align: center;
+	font-family: "Zen Dots", sans-serif;
+}
+
+    input[type="text"],
+    input[type="datetime-local"],
+    select {
+    	font-family: "Ubuntu", sans-serif;
+        width: 100%;
+        padding: 10px;
+        margin: 5px 0;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        box-sizing: border-box;
+    }
+
+    input[type="submit"] {
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 25px;
+    cursor: pointer;
+    display: block;
+	font-family: "Gajraj One", sans-serif;    
+	margin: 0 auto; 
+    width: 100%; 
+    max-width: 200px; 
+    transition: background-color 0.3s, box-shadow 0.3s; 
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.1);
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049; 
+     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+    
+.button-container {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    justify-content:space-between;
+    
+}
+.button-container.button-side-by-side {
+    display: flex;
+}
+
+.button-container button {
+    background-color: #0078d4; 
+    border-radius: 10px; 
+    padding: 10px; 
+    margin-bottom: 10px; 
+    border: none;
+    color: white;
+    cursor: pointer;
+    display: block;
+    width: 100%; 
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+        animation: spring 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+        
+}
+    button {
+        background-color: #0078d4;
+        color: #fff;
+        border: none;
+        border-radius: 3px;
+        padding: 10px 20px;
+        cursor: pointer;
+        font-family: "Bruno Ace", sans-serif;
+        flex-grow: 1;
+        margin: 0 5px; 
+        font-size:16px;
+        transition: background-color 0.3s, transform 0.3s;
+    }
+
+    button:hover {
+        background-color: #005a9e;
+         transform: scale(1.1);
+    }
+    
+    footer {
+    position: fixed; 
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    border-top: 4px solid #333;
+    background-color: #f8f9fa; 
+    background-image: url('https://i.ibb.co/Kh0KY5X/image1-0.jpg');
+    
+}
+
+
+.footer-image {
+    width: 50px;
+    height: auto;
+    transition: filter 3s ease, transform 0.5s ease;
+}
+
+.footer-image:hover {
+   transform : scale(1.19);
+}
+
+.toggle {
+            background-color: #C0C0C0;
+            color: black;
+            border: none;
+            border-radius: 3px;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-family: "Bruno Ace", sans-serif;
+            font-size: 16px;
+            transition: background-color 0.3s, transform 0.3s;
+            display: block;
+            margin: 20px auto 10px
+        }
+
+.toggle:hover {
+            background-color: #005a9e;
+            transform: scale(1.1);
+            color:white;
+        }
+</style>
+</head>
+<body>
+<header>
+<h2 style="color: white; text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;font-family: 'Shrikhand', serif;">◄ Μια εφαρμογή ιστού προγραμματιστή εργασιών ►</h2>
+</header>
+    <div class="container">
+    <h1>TASK SCHEDULER</h1>
+    <button onclick="toggleForm(); toggleButtonLayout();" class="toggle">Add Task</button>
+    <form id="taskForm" action="/addTasks" method="post" style="display: none;">
+        <input type="text" id="title" name="title" placeholder="Task Title" required><br><br>
+        
+        <input type="datetime-local" id="due" name="due" placeholder="Due Date and Time" required><br><br>
+        
+        <select id="priority" name="priority" required>
+            <option value="" disabled selected hidden>Select Priority</option>
+            <option value="HIGH">High</option>
+            <option value="MEDIUM">Medium</option>
+            <option value="LOW">Low</option>
+        </select><br><br>
+        
+        <input type="submit" value="ADD"><br>
+    </form>
+    <div class="button-container">
+    
+        <button onclick="window.location.href='/getTasks'">MY TASKS</button>
+        <button onclick="window.location.href='/finished'">COMPLETED</button>
+    </div>
+    </div>
+<script>
+function toggleForm() {
+    var form = document.getElementById("taskForm");
+    form.style.display = form.style.display === "none" ? "block" : "none";
+}
+function toggleButtonLayout() {
+    const buttonContainer = document.querySelector('.button-container'); 
+    buttonContainer.classList.toggle('button-side-by-side');
+}
+    document.getElementById('taskForm').addEventListener('submit', function(event) {
+        event.preventDefault(); 
+
+        var dueDateTime = new Date(document.getElementById('due').value);
+        var currentDate = new Date();
+        
+        var isToday = dueDateTime.getDate() === currentDate.getDate() &&
+        dueDateTime.getMonth() === currentDate.getMonth() &&
+        dueDateTime.getFullYear() === currentDate.getFullYear();
+        
+        var isPastTime = dueDateTime < currentDate;
+        if (isToday && isPastTime) {
+            alert('The selected time has already passed today. Please select upcoming time.');
+            return; 
+        }
+        if (dueDateTime < currentDate) {
+            alert('Please select a VALID date/time, preferably upcoming.');
+            return; 
+        }
+        var timeDifference = dueDateTime.getTime() - currentDate.getTime();
+        var daysDifference = Math.floor(timeDifference / (1000 * 3600 * 24));
+        var hoursDifference = Math.floor((timeDifference % (1000 * 3600 * 24)) / (1000 * 3600)); 
+        var minutesDifference = Math.floor((timeDifference % (1000 * 3600)) / (1000 * 60)); 
+        
+        var message = 'Time until due: ';
+        if (daysDifference > 0) {
+            message += daysDifference + ' days ';
+        }
+        if (hoursDifference > 0) {
+            message += hoursDifference + ' hours ';
+        }
+        if (minutesDifference > 0) {
+            message += minutesDifference + ' minutes ';
+        }
+        
+        alert(message);
+        this.submit();
+    });
+</script>
+ <footer class="custom-footer">
+        <a href="https://www.linkedin.com/in/naggasai15waddepally/"><img src="https://i.postimg.cc/TPFq12dQ/watermark-black-removebg-preview-1.png" alt="My Monogram" style="width: 50px; height: auto;" class="footer-image"></a><br>
+</footer> 
+</body>
+</html>
